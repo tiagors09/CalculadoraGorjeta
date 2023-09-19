@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="y1">#F6F1E9</color>
-    <color name="y2">#FFD93D</color>
-    <color name="y3">#FF8400</color>
-    <color name="y4">#4F200D</color>
+    <color name="colorPrimary">#ffa742</color>
+    <color name="colorPrimaryDark">#e88c2a</color>
+    <color name="colorAccent">#ffb452</color>
+    <color name="laranja_claro">#ffd470</color>
 </resources>
