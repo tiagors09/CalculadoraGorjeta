@@ -4,4 +4,5 @@
     <string name="porcentagemPadrao">0%</string>
     <string name="gorjetaRotulo">Gorjeta\n</string>
     <string name="totalRotulo">Total\n</string>
+    <string name="reaisRotulo">R$ 0.00</string>
 </resources>
