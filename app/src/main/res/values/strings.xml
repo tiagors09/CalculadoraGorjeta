@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CalculadoraGorjeta</string>
+    <string name="hintValorGorjeta">Digite um valor ex: 36.50</string>
+    <string name="porcentagemPadrao">0%</string>
+    <string name="gorjetaRotulo">Gorjeta\n</string>
+    <string name="totalRotulo">Total\n</string>
 </resources>
