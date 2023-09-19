@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText total;
     private TextView textViewPorcentagem, textViewGorjeta, textViewTotal;
     private SeekBar seekBarPorcentagem;
-    private double porcentagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,20 +26,35 @@ public class MainActivity extends AppCompatActivity {
         this.seekBarPorcentagem = findViewById(R.id.seekBarPorcentagem);
 
         this.seekBarPorcentagem.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            String valorRecuperado;
+            double valorDigitado, gorjeta, totalPagar, porcentagem;
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                porcentagem = progress;
-                textViewPorcentagem.setText(porcentagem+"%");
+                textViewPorcentagem.setText(Math.round(progress)+"%");
+                this.valorRecuperado = total.getText().toString();
+                this.porcentagem = progress;
+
+                if(valorRecuperado == null || valorRecuperado.equals("")) {
+                    Toast.makeText(
+                            getApplicationContext(),
+                            "Digite um valor primeiro",
+                            Toast.LENGTH_LONG
+                    ).show();
+                } else {
+                    this.valorDigitado = Double.parseDouble(valorRecuperado);
+                    this.gorjeta = valorDigitado * (this.porcentagem/100);
+                    this.totalPagar = gorjeta + valorDigitado;
+                    textViewGorjeta.setText("R$ "+Math.round(gorjeta));
+                    textViewTotal.setText("R$ "+Math.round(totalPagar));
+                }
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
 
